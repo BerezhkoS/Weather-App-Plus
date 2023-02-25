@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Kyiv</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500&family=Quicksand:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <footer class="external-frame">
+        <div class="row top-row">
+          <div class="col date-time">
+            Wed, Jan 31
+            <br />
+            16:03
+          </div>
+          <div class="col">
+            <form id="city-search-form">
+              <input
+                type="search "
+                placeholder="Search for your city..."
+                class="city-search"
+              />
+            </form>
+          </div>
+          <div class="col">
+            <button class="celsius">°C</button>
+            <button class="fahrenheit">°F</button>
+          </div>
+        </div>
+
+        <button id="current-location-button">
+          show the <br />
+          current location
+        </button>
+
+        <h1>Kyiv</h1>
+
+        <img src="icons/snow.png" alt="weather image" class="main-icon" />
+
+        <div id="current-temperature-wrapper">
+          <div class="current-temperature">+1</div>
+          <span class="sign">°C</span>
+        </div>
+
+        <div class="current-weather">Snowing</div>
+
+        <section class="additional-measurements">
+          <div class="row">
+            <div class="col-4">Feels like</div>
+            <div class="col">
+              <span class="feels-like-temp">0</span>
+              <span class="feels-like-units">°C</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">Wind</div>
+            <div class="col"><span class="wind-speed">13</span> km/h</div>
+          </div>
+          <div class="row">
+            <div class="col-4">Humidity</div>
+            <div class="col"><span class="humidity">92</span> %</div>
+          </div>
+        </section>
+
+        <small class="hint"> *Dress warm 🧣 </small>
+
+        <div class="btn-group" style="width: 100%">
+          <button class="lower-buttons" style="width: 20%">
+            Thu
+            <br />
+            <img src="icons/clouds.png" alt="weater image" width="30" />
+            <br />
+            <strong>+3°</strong> -2°
+          </button>
+
+          <button class="lower-buttons" style="width: 20%">
+            Fri
+            <br />
+            <img src="icons/snowrain.png" alt="weater image" width="30" />
+            <br />
+            <strong>+1°</strong> -1°
+          </button>
+
+          <button class="lower-buttons" style="width: 20%">
+            Sat
+            <br />
+            <img src="icons/snow.png" alt="weater image" width="30" />
+            <br />
+            <strong>+2°</strong> -1°
+          </button>
+
+          <button class="lower-buttons" style="width: 20%">
+            Sun
+            <br />
+            <img src="icons/suncloud.png" alt="weater image" width="30" />
+            <br />
+            <strong>+1°</strong> -4°
+          </button>
+
+          <button class="lower-buttons" style="width: 20%">
+            Mon
+            <br />
+            <img src="icons/sun.png" alt="weater image" width="30" />
+            <br />
+            <strong>-2°</strong> -6°
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="java.js"></script>
+  </body>
+</html>

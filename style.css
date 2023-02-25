@@ -1,0 +1,158 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  color: rgb(254, 224, 245);
+}
+
+.external-frame {
+  background: radial-gradient(
+    circle at 50.3% 44.5%,
+    rgb(123, 69, 62) 0%,
+    rgb(33 21 49) 102%
+  );
+  max-width: 369px;
+  border: 1px solid rgb(33 21 49);
+  border-radius: 30px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 5px 5px 8px rgba(33, 21, 49, 0.5);
+}
+
+.top-row {
+  padding-top: 15px;
+  padding-left: 10px;
+  align-items: center;
+}
+
+.date-time {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.city-search {
+  border-radius: 15px;
+  text-align: center;
+  color: rgb(254, 224, 245);
+  background: transparent;
+  border: 1px solid rgb(254, 224, 245);
+}
+
+.city-search:focus-visible {
+  outline: none;
+}
+
+.celsius,
+.fahrenheit {
+  border: none;
+  line-height: 1.5;
+  font-size: 12px;
+  color: rgb(33 21 49);
+  background: rgb(254, 224, 245);
+  border-radius: 3px;
+  transition: all 200ms ease-in-out;
+}
+
+.celsius:hover,
+.fahrenheit:hover {
+  background: rgba(254, 224, 245, 0.3);
+  border: 1px solid rgb(254, 224, 245);
+  color: rgb(254, 224, 245);
+  line-height: 1.7;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.fahrenheit {
+  position: relative;
+  left: -5px;
+  border-radius: 0 3px 3px 0;
+}
+
+.celsius {
+  border-radius: 3px 0 0 3px;
+}
+
+#current-location-button {
+  font-size: 11px;
+  display: block;
+  margin: 5px auto 0;
+  line-height: 1;
+  padding: 3px 3px 5px;
+  background: rgb(49 21 38 / 74%);
+  color: rgba(254, 224, 245, 0.901);
+  border: 1px solid rgba(219, 219, 219, 0);
+  border-radius: 5px;
+  transition: all 250ms ease-in-out;
+}
+
+#current-location-button:hover {
+  background: rgba(72, 32, 56, 0.74);
+  color: rgb(254, 224, 245);
+}
+
+h1 {
+  text-align: center;
+  padding-top: 35px;
+  font-size: 35px;
+  text-transform: capitalize;
+}
+
+.main-icon {
+  max-width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+#current-temperature-wrapper {
+  position: relative;
+  line-height: 1;
+}
+
+.current-temperature {
+  text-align: center;
+  font-size: 90px;
+  font-weight: 300;
+}
+
+.sign {
+  font-size: 25px;
+  position: relative;
+  right: -70%;
+  top: -78px;
+}
+
+.current-weather {
+  text-align: center;
+  padding-bottom: 80px;
+  font-weight: 500;
+}
+
+.additional-measurements {
+  padding-left: 115px;
+}
+
+.hint {
+  display: block;
+  margin: 0 auto;
+  max-width: fit-content;
+  padding: 15px 0 5px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.lower-buttons {
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid rgba(219, 219, 219, 0);
+  border-top: 2px solid rgba(219, 219, 219, 0);
+  line-height: 2.2;
+  background: rgb(49 21 38 / 74%);
+  color: rgb(254, 224, 245);
+  transition: all 250ms ease-in-out;
+}
+
+.lower-buttons:hover {
+  background: rgba(72, 32, 56, 0.74);
+  position: relative;
+  top: 5px;
+}
