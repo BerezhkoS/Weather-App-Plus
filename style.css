@@ -1,9 +1,9 @@
 body {
-  font-family: "Quicksand", sans-serif;
-  color: rgb(254, 224, 245);
 }
 
 .external-frame {
+  font-family: "Quicksand", sans-serif;
+  color: rgb(254, 224, 245);
   background: radial-gradient(
     circle at 50.3% 44.5%,
     rgb(123, 69, 62) 0%,
@@ -31,8 +31,8 @@ body {
 .city-search {
   border-radius: 15px;
   text-align: center;
-  color: rgb(254, 224, 245);
   background: transparent;
+  color: rgb(254, 224, 245);
   border: 1px solid rgb(254, 224, 245);
 }
 
@@ -155,4 +155,9 @@ h1 {
   background: rgba(72, 32, 56, 0.74);
   position: relative;
   top: 5px;
+}
+
+.open-source-by {
+  text-align: center;
+  color: rgb(49 21 38);
 }
