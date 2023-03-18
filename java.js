@@ -31,14 +31,16 @@ if (minutes < 10) {
 dateTime.innerHTML = `${weekDay}, ${month} ${date}<br> ${hour}:${minutes}`;
 
 function showData(response) {
-  //console.log(response);
+  console.log(response.data);
 
   document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector(".current-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+
+  celsiusTemperature = Math.round(response.data.main.temp);
+
+  document.querySelector(".current-temperature").innerHTML = celsiusTemperature;
+
   document.querySelector(".current-weather").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
   document.querySelector(".feels-like-temp").innerHTML = Math.round(
     response.data.main.feels_like
   );
@@ -46,6 +48,10 @@ function showData(response) {
     response.data.wind.speed
   );
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
+
+  let icon = document.querySelector(".main-icon");
+  icon.setAttribute("src", `icons/${response.data.weather[0].icon}.png`);
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function getApiData(event) {
@@ -56,9 +62,6 @@ function getApiData(event) {
 
   axios.get(apiUrlWeather).then(showData);
 }
-
-let citySearch = document.querySelector("#city-search-form");
-citySearch.addEventListener("submit", getApiData);
 
 function showLocation(position) {
   let apiKey = "6782253072f7d90462731a624097fc54";
@@ -71,6 +74,29 @@ function getCurrentLocation(event) {
   event.preventDefault;
   navigator.geolocation.getCurrentPosition(showLocation);
 }
+
+function showFahrenheitTemperature(event) {
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  document.querySelector(".current-temperature").innerHTML = Math.round(
+    fahrenheitTemperature
+  );
+}
+
+function showCelsiusTemperature(event) {
+  document.querySelector(".current-temperature").innerHTML = celsiusTemperature;
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitButton = document.querySelector(".fahrenheit");
+fahrenheitButton.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusButton = document.querySelector(".celsius");
+celsiusButton.addEventListener("click", showCelsiusTemperature);
+
+let citySearch = document.querySelector("#city-search-form");
+citySearch.addEventListener("submit", getApiData);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
