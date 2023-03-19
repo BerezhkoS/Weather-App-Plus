@@ -52,6 +52,9 @@ function showData(response) {
   let icon = document.querySelector(".main-icon");
   icon.setAttribute("src", `icons/${response.data.weather[0].icon}.png`);
   icon.setAttribute("alt", response.data.weather[0].description);
+
+  fahrenheitButton.classList.remove("active");
+  celsiusButton.classList.add("active");
 }
 
 function getApiData(event) {
@@ -81,10 +84,16 @@ function showFahrenheitTemperature(event) {
   document.querySelector(".current-temperature").innerHTML = Math.round(
     fahrenheitTemperature
   );
+
+  celsiusButton.classList.remove("active");
+  fahrenheitButton.classList.add("active");
 }
 
 function showCelsiusTemperature(event) {
   document.querySelector(".current-temperature").innerHTML = celsiusTemperature;
+
+  fahrenheitButton.classList.remove("active");
+  celsiusButton.classList.add("active");
 }
 
 let celsiusTemperature = null;
