@@ -55,6 +55,8 @@ function showData(response) {
 
   fahrenheitButton.classList.remove("active");
   celsiusButton.classList.add("active");
+
+  document.querySelector(".sign").innerHTML = "°C";
 }
 
 function getApiData(event) {
@@ -87,6 +89,8 @@ function showFahrenheitTemperature(event) {
 
   celsiusButton.classList.remove("active");
   fahrenheitButton.classList.add("active");
+
+  document.querySelector(".sign").innerHTML = "°F";
 }
 
 function showCelsiusTemperature(event) {
@@ -94,6 +98,8 @@ function showCelsiusTemperature(event) {
 
   fahrenheitButton.classList.remove("active");
   celsiusButton.classList.add("active");
+
+  document.querySelector(".sign").innerHTML = "°C";
 }
 
 let celsiusTemperature = null;
