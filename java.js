@@ -30,25 +30,40 @@ if (minutes < 10) {
 }
 dateTime.innerHTML = `${weekDay}, ${month} ${date}<br> ${hour}:${minutes}`;
 
+function formatDayForecast(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecastDaily = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row forecast-row">`;
 
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecastDaily.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col forecast-col">
-    ${day}
+    ${formatDayForecast(forecastDay.dt)}
     <br />
-    <img src="icons/01d.png" alt="weater image" width="30" />
+    <img src="icons/${forecastDay.weather[0].icon}.png" alt="${
+          forecastDay.weather[0].description
+        }" width="30" />
     <br />
-    <strong>+3°</strong> -2°
+    <strong>${Math.round(forecastDay.temp.max)}° </strong> ${Math.round(
+          forecastDay.temp.min
+        )}°
     </div>
     `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
