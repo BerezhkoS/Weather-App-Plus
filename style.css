@@ -138,6 +138,11 @@ h1 {
   font-weight: 500;
 }
 
+.forecast-row {
+  max-width: 369px;
+  margin-left: 0;
+}
+
 .forecast-col {
   text-align: center;
   border-left: none;

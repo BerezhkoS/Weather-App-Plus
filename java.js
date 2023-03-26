@@ -33,7 +33,7 @@ dateTime.innerHTML = `${weekDay}, ${month} ${date}<br> ${hour}:${minutes}`;
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row forecast-row">`;
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
   days.forEach(function (day) {
