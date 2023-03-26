@@ -132,7 +132,7 @@ h1 {
 
 .forecast-row {
   max-width: 369px;
-  margin-left: -1;
+  margin: 0 auto;
 }
 
 .forecast-col {
