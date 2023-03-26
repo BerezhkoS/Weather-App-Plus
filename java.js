@@ -30,7 +30,8 @@ if (minutes < 10) {
 }
 dateTime.innerHTML = `${weekDay}, ${month} ${date}<br> ${hour}:${minutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row forecast-row">`;
@@ -40,19 +41,26 @@ function displayForecast() {
     forecastHTML =
       forecastHTML +
       `
-            <div class="col forecast-col">
-              ${day}
-              <br />
-              <img src="icons/01d.png" alt="weater image" width="30" />
-              <br />
-              <strong>+3°</strong> -2°
-            </div>
-  `;
+    <div class="col forecast-col">
+    ${day}
+    <br />
+    <img src="icons/01d.png" alt="weater image" width="30" />
+    <br />
+    <strong>+3°</strong> -2°
+    </div>
+    `;
   });
 
   forecastHTML = forecastHTML + `</div>`;
 
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecastApi(coordinates) {
+  let apiKey = "6782253072f7d90462731a624097fc54";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showData(response) {
@@ -82,6 +90,8 @@ function showData(response) {
   celsiusButton.classList.add("active");
 
   document.querySelector(".sign").innerHTML = "°C";
+
+  getForecastApi(response.data.coord);
 }
 
 function getApiData(event) {
@@ -140,5 +150,3 @@ citySearch.addEventListener("submit", getApiData);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-displayForecast();
