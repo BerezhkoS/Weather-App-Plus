@@ -79,8 +79,6 @@ function getForecastApi(coordinates) {
 }
 
 function showData(response) {
-  console.log(response.data);
-
   document.querySelector("h1").innerHTML = response.data.name;
 
   celsiusTemperature = Math.round(response.data.main.temp);
