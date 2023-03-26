@@ -115,13 +115,13 @@ h1 {
 .sign {
   font-size: 25px;
   position: relative;
-  right: -70%;
-  top: -78px;
+  right: -67%;
+  top: -80px;
 }
 
 .current-weather {
   text-align: center;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
   font-weight: 500;
 }
 
@@ -138,7 +138,8 @@ h1 {
   font-weight: 500;
 }
 
-.lower-buttons {
+.forecast-col {
+  text-align: center;
   border-left: none;
   border-right: none;
   border-bottom: 2px solid rgba(219, 219, 219, 0);
@@ -149,7 +150,7 @@ h1 {
   transition: all 250ms ease-in-out;
 }
 
-.lower-buttons:hover {
+.forecast-col:hover {
   background: rgba(72, 32, 56, 0.74);
   position: relative;
   top: 5px;

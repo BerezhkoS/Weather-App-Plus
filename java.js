@@ -30,6 +30,31 @@ if (minutes < 10) {
 }
 dateTime.innerHTML = `${weekDay}, ${month} ${date}<br> ${hour}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col forecast-col">
+              ${day}
+              <br />
+              <img src="icons/01d.png" alt="weater image" width="30" />
+              <br />
+              <strong>+3°</strong> -2°
+            </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showData(response) {
   console.log(response.data);
 
@@ -115,3 +140,5 @@ citySearch.addEventListener("submit", getApiData);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+displayForecast();
