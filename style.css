@@ -108,7 +108,7 @@ h1 {
 
 .current-temperature {
   text-align: center;
-  font-size: 90px;
+  font-size: 100px;
   font-weight: 300;
 }
 
@@ -116,31 +116,23 @@ h1 {
   font-size: 25px;
   position: relative;
   right: -67%;
-  top: -80px;
+  top: -87px;
 }
 
 .current-weather {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
   font-weight: 500;
 }
 
 .additional-measurements {
   padding-left: 115px;
-}
-
-.hint {
-  display: block;
-  margin: 0 auto;
-  max-width: fit-content;
-  padding: 15px 0 5px;
-  font-size: 12px;
-  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .forecast-row {
   max-width: 369px;
-  margin-left: 0;
+  margin-left: -1;
 }
 
 .forecast-col {

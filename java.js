@@ -165,3 +165,5 @@ citySearch.addEventListener("submit", getApiData);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+getApiData("Kyiv");
